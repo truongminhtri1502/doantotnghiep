@@ -1,0 +1,2899 @@
+[
+    {
+        "id": "4bf109a5.a97ad8",
+        "type": "tab",
+        "label": "Tuya Cloud API",
+        "disabled": false,
+        "info": "\r\n# Tuya Cloud API for beginners\r\n\r\nThis project explains how to work with Tuya Cloud API and how to use Postman to develop REST request for NodeRED \r\nThanks to James Wilson for udating the flow to match latest authtentication requirement\r\n\r\n\r\n![Logo](https://notenoughtech.com/wp-content/uploads/2021/07/2021-07-12-23_35_30-Brand-Logo-Guidelines-Video-v2.0.0_0817.pdf-Personal-Microsoft%E2%80%8B-Edge.jpg)\r\n\r\n    \r\n## Features\r\n\r\n- Authentication\r\n- Get device list\r\n- Get status and data points\r\n- Issue commands\r\n\r\n  \r\n## Documentation\r\n\r\n[Documentation](https://linktodocumentation)\r\n\r\n  \r\n## More on\r\n\r\nVisit my page and the [article](https://notenoughtech.com/home-automation/tuya-cloud-api/) covering this topic.\r\n\r\n  \r\n## Appendix\r\n\r\nPostman, Tuya Cloud API\r\n  \r\n## 🔗 Follow my work\r\n[![Twitter Follow](https://img.shields.io/twitter/follow/notenoughtech?label=%40notenoughtech&logo=twitter&style=for-the-badge)](https://twitter.com/NotEnoughTECH)\r\n[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC7V__uBIaZotHn_smHJShGQ?label=NotEnoughTech&logo=YouTube&logoColor=red&style=for-the-badge)](https://www.youtube.com/channel/UC7V__uBIaZotHn_smHJShGQ)\r\n[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/not_enough_tech?logo=reddit&logoColor=white&style=for-the-badge)](https://www.reddit.com/r/Not_Enough_Tech/)",
+        "env": []
+    },
+    {
+        "id": "48610b6bdd9319c2",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f1d2d6fa4514915b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "af7cc9e22f0c9311",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "43d5a9565a238fac",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "af96de71051eab08",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "72fa4349ecd3499890bb907cf4aa9d34.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "16c42e555d5cb688",
+        "type": "mqtt-broker",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "broker": "3e5023b718fa4a86a263460ba1ab8e51.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "subtop",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "12",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b91353597c2b8852",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d54080188af8a4b8",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "ed96e13f2437c5eb",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "c72907f49eda47f5959d51346e25e4c8.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Điều khiển bật đèn ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Nhập đèn cần bật (1 đèn/ 1 giờ)",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5313998d.974bb8",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "func": "var device_id = flow.get(\"device_id\");\nvar url = \"https://openapi.tuyaeu.com/v1.0/iot-03/devices/\"+device_id+\"/specification\";\nvar t = msg.time;\nvar method = \"GET\";\nvar client_id  = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar token = creds.access_token;\nvar sign = msg.payload;\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"mode\" : \"cors\",\n \"Content-Type\": \"application/json\",\n \"sign\": sign.toUpperCase(),\n \"access_token\" : token\n },\n msg.payload = '';\n msg.url = url;\n msg.method = \"GET\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 180,
+        "wires": [
+            [
+                "3ac1a645.0bb26a"
+            ]
+        ]
+    },
+    {
+        "id": "3ac1a645.0bb26a",
+        "type": "http request",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 890,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a87ea183.b0d6b",
+        "type": "inject",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "d5eaa68e.d5e5c8"
+            ]
+        ]
+    },
+    {
+        "id": "d5eaa68e.d5e5c8",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Create signStr",
+        "func": "var creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar device_id = flow.get(\"device_id\");\nvar t = msg.time;\nvar client_id  = flow.get(\"tuya_client_id\");\nvar token = access_token;\nvar method = \"GET\";\nvar sign_url = \"/v1.0/iot-03/devices/\"+device_id+\"/specification\";\nvar content_hash = \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+token+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 180,
+        "wires": [
+            [
+                "f6881316.41cdb"
+            ]
+        ]
+    },
+    {
+        "id": "f6881316.41cdb",
+        "type": "hmac",
+        "z": "4bf109a5.a97ad8",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "yoursecret",
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "5313998d.974bb8"
+            ]
+        ]
+    },
+    {
+        "id": "f811e1b6.ee796",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Head_token",
+        "func": "var url = \"https://openapi.tuyaus.com/v1.0/token?grant_type=1\";\nvar t = msg.time;\nvar sign = msg.payload;\nvar client_id  = flow.get(\"tuya_client_id\");\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"sign\": sign.toUpperCase(),\n },\n msg.payload = '';\n msg.url = url;\n msg.method = \"GET\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "1bfa922b.aad55e"
+            ]
+        ]
+    },
+    {
+        "id": "1bfa922b.aad55e",
+        "type": "http request",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 890,
+        "y": 80,
+        "wires": [
+            [
+                "74db8d4a.eee2c4"
+            ]
+        ]
+    },
+    {
+        "id": "3023a9a8.6133e6",
+        "type": "inject",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "26588c1b.dcec54"
+            ]
+        ]
+    },
+    {
+        "id": "26588c1b.dcec54",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Create signStr",
+        "func": "var client_id  = flow.get(\"tuya_client_id\");\nvar t = msg.time;\n\n\nvar method = \"GET\";\nvar sign_url = \"/v1.0/token?grant_type=1\";\n\n// Couldn't get nodered to process an empty string so this is a hash of an empty file\nvar content_hash = \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "5eeed491.cd055c"
+            ]
+        ]
+    },
+    {
+        "id": "5eeed491.cd055c",
+        "type": "hmac",
+        "z": "4bf109a5.a97ad8",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "3555450465ed480ca1bf84d3e63d20eb",
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "f811e1b6.ee796"
+            ]
+        ]
+    },
+    {
+        "id": "b1615793.fd0548",
+        "type": "comment",
+        "z": "4bf109a5.a97ad8",
+        "name": "Get Access Token",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "608b6d1e.a8a874",
+        "type": "comment",
+        "z": "4bf109a5.a97ad8",
+        "name": "Get Status Of Device",
+        "info": "",
+        "x": 120,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "74db8d4a.eee2c4",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Extract Token from Response",
+        "func": "var data = msg.payload;\nvar access = data.result.access_token;\nvar refresh = data.result.refresh_token;\n\nvar creds ={\n \"access_token\" : access,\n \"refresh_token\" : refresh\n}\nflow.set(\"tuya\", creds);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 80,
+        "wires": [
+            [
+                "85b6820452c920b4"
+            ]
+        ]
+    },
+    {
+        "id": "bbb94560.17a528",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Settings CLICK SETUP TAB",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "var client_id = \"phwy3ntuvymux7mjpj5v\";\nvar user_id = \"xxxxx\";\nvar device_id = \"eb88edc915c07b368dnqka\";\nflow.set(\"tuya_client_id\", client_id);\nflow.set(\"tuya_user_id\", user_id );\nflow.set(\"device_id\", device_id );",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14af15b8.86c55a",
+        "type": "comment",
+        "z": "4bf109a5.a97ad8",
+        "name": "Turn Device Off",
+        "info": "",
+        "x": 100,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ae0294c.e17c268",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Head_off",
+        "func": "var device_id = flow.get(\"device_id\");\nvar url = \"https://openapi.tuyaus.com/v1.0/devices/\"+device_id+\"/commands\";\nvar t = msg.time;\nvar client_id  = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar sign = msg.payload;\n\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"mode\" : \"cors\",\n \"Content-Type\": \"application/json\",\n \"sign\": sign.toUpperCase(),\n \"access_token\" : access_token,\n },\n msg.payload = '{\"commands\":[{\"code\":\"switch_1\",\"value\":false}]}';\n msg.url = url;\n msg.method = \"POST\";\n //msg.payload = '';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 300,
+        "wires": [
+            [
+                "448c54b6.42427c"
+            ]
+        ]
+    },
+    {
+        "id": "448c54b6.42427c",
+        "type": "http request",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            [
+                "df5970519a1fced1"
+            ]
+        ]
+    },
+    {
+        "id": "e5b52f57.cd35e",
+        "type": "inject",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"commands\":[{\"code\":\"switch_1\",\"value\":false}]}",
+        "payloadType": "str",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "7bf971b.8e0989"
+            ]
+        ]
+    },
+    {
+        "id": "7f3ecdbc.908f24",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Create signStr",
+        "func": "var creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar device_id = flow.get(\"device_id\");\nvar hashed_size = msg.payload;\nvar t = msg.time;\nvar client_id  = flow.get(\"tuya_client_id\");\nvar token = access_token;\nvar method = \"POST\";\nvar sign_url = \"/v1.0/devices/\"+device_id+\"/commands\";\nvar content_hash = hashed_size;\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+token+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "17bac91b.4b1287"
+            ]
+        ]
+    },
+    {
+        "id": "17bac91b.4b1287",
+        "type": "hmac",
+        "z": "4bf109a5.a97ad8",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "3555450465ed480ca1bf84d3e63d20eb",
+        "x": 690,
+        "y": 300,
+        "wires": [
+            [
+                "ae0294c.e17c268"
+            ]
+        ]
+    },
+    {
+        "id": "9295d1f4.912c5",
+        "type": "comment",
+        "z": "4bf109a5.a97ad8",
+        "name": "Turn Device On",
+        "info": "",
+        "x": 100,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c2dcb090.24f8f",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Head_On",
+        "func": "var device_id = flow.get(\"device_id\");\nvar url = \"https://openapi.tuyaus.com/v1.0/devices/\"+device_id+\"/commands\";\nvar t = msg.time;\nvar client_id  = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar sign = msg.payload;\n\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"mode\" : \"cors\",\n \"Content-Type\": \"application/json\",\n \"sign\": sign.toUpperCase(),\n \"access_token\" : access_token,\n },\n msg.payload = '{\"commands\":[{\"code\":\"switch_1\",\"value\":true}]}';\n msg.url = url;\n msg.method = \"POST\";\n //msg.payload = '';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 420,
+        "wires": [
+            [
+                "f6260f4c.e8663"
+            ]
+        ]
+    },
+    {
+        "id": "f6260f4c.e8663",
+        "type": "http request",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1030,
+        "y": 420,
+        "wires": [
+            [
+                "0e46df74a8e034c9"
+            ]
+        ]
+    },
+    {
+        "id": "556e864.5344d78",
+        "type": "inject",
+        "z": "4bf109a5.a97ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"commands\":[{\"code\":\"switch_1\",\"value\":true}]}",
+        "payloadType": "str",
+        "x": 50,
+        "y": 420,
+        "wires": [
+            [
+                "a21182b6.3a489"
+            ]
+        ]
+    },
+    {
+        "id": "c4e6dff.719862",
+        "type": "function",
+        "z": "4bf109a5.a97ad8",
+        "name": "Create signStr",
+        "func": "var creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar device_id = flow.get(\"device_id\");\nvar hashed_size = msg.payload;\nvar t = msg.time;\nvar client_id  = flow.get(\"tuya_client_id\");\nvar token = access_token;\nvar method = \"POST\";\nvar sign_url = \"/v1.0/devices/\"+device_id+\"/commands\";\nvar content_hash = hashed_size;\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+token+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "552476b9.24cad8"
+            ]
+        ]
+    },
+    {
+        "id": "552476b9.24cad8",
+        "type": "hmac",
+        "z": "4bf109a5.a97ad8",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "3555450465ed480ca1bf84d3e63d20eb",
+        "x": 690,
+        "y": 420,
+        "wires": [
+            [
+                "c2dcb090.24f8f"
+            ]
+        ]
+    },
+    {
+        "id": "a21182b6.3a489",
+        "type": "digest",
+        "z": "4bf109a5.a97ad8",
+        "name": "Hash the body data",
+        "algorithm": "SHA256",
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "c4e6dff.719862"
+            ]
+        ]
+    },
+    {
+        "id": "7bf971b.8e0989",
+        "type": "digest",
+        "z": "4bf109a5.a97ad8",
+        "name": "Hash the body data",
+        "algorithm": "SHA256",
+        "x": 250,
+        "y": 300,
+        "wires": [
+            [
+                "7f3ecdbc.908f24"
+            ]
+        ]
+    },
+    {
+        "id": "85b6820452c920b4",
+        "type": "debug",
+        "z": "4bf109a5.a97ad8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "0e46df74a8e034c9",
+        "type": "debug",
+        "z": "4bf109a5.a97ad8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "df5970519a1fced1",
+        "type": "debug",
+        "z": "4bf109a5.a97ad8",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "edef92a56186abef",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "Create signStr",
+        "func": "// Lấy thông tin từ flow context\nlet creds = flow.get(\"tuya\");\nlet access_token = creds.access_token;\nlet client_id = flow.get(\"tuya_client_id\");\nlet device_id = flow.get(\"device_id\");\n\n// Chuẩn bị các thành phần để tạo chuỗi ký\nlet t = msg.time;\nlet method = \"POST\";\nlet sign_url = `/v1.0/iot-03/devices/${device_id}/commands`;\n\n// Tạo nội dung băm từ payload đã được hash SHA256 trong bước trước\nlet content_hash = msg.payload;\nlet string_to_sign = `${method}\\n${content_hash}\\n\\n${sign_url}`;\n\n// Chuỗi signStr để ký\nmsg.payload = client_id + access_token + t + string_to_sign;\n\n// Giữ lại timestamp\nmsg.time = t;\n\n// Trả lại msg để chuyển đến node tiếp theo (hmac)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "adf93a5a9e3caf79"
+            ]
+        ]
+    },
+    {
+        "id": "fd16cc75caaf5346",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "func": "var device_id = flow.get(\"device_id\");\nvar url = \"https://openapi.tuyaus.com/v1.0/iot-03/devices/\" + device_id + \"/commands\";\nvar t = msg.time;\nvar client_id = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar sign = msg.payload;\n\n// Use the originalPayload with commands from the previous node\nlet commands = msg.originalPayload?.commands || [];\n\nmsg.headers = {\n    \"sign_method\": \"HMAC-SHA256\",\n    \"client_id\": client_id,\n    \"t\": t.toString(),\n    \"mode\": \"cors\",\n    \"Content-Type\": \"application/json\",\n    \"sign\": sign.toUpperCase(),\n    \"access_token\": access_token\n};\n\n// Set the payload with the commands array\nmsg.payload = {\n    \"commands\": commands\n};\n\n// Convert the payload to string for the API request\nmsg.payload = JSON.stringify(msg.payload);\nmsg.url = url;\nmsg.method = \"POST\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 280,
+        "wires": [
+            [
+                "ebb95df7e595d2cd"
+            ]
+        ]
+    },
+    {
+        "id": "ebb95df7e595d2cd",
+        "type": "http request",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 1270,
+        "y": 280,
+        "wires": [
+            [
+                "0dbf5572c2bc5b68"
+            ]
+        ]
+    },
+    {
+        "id": "41f755d48b9d1380",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "func": "var url = \"https://openapi.tuyaus.com/v1.0/token?grant_type=1\";\nvar t = msg.time;\nvar sign = msg.payload;\nvar client_id  = flow.get(\"tuya_client_id\");\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"sign\": sign.toUpperCase(),\n },\n msg.payload = '';\n msg.url = url;\n msg.method = \"GET\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "43c23778a5b3bf9a"
+            ]
+        ]
+    },
+    {
+        "id": "43c23778a5b3bf9a",
+        "type": "http request",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 870,
+        "y": 220,
+        "wires": [
+            [
+                "0d3864eddec3bb61"
+            ]
+        ]
+    },
+    {
+        "id": "8c87f22f6ad9438f",
+        "type": "inject",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "8da0ff09a835999c"
+            ]
+        ]
+    },
+    {
+        "id": "8da0ff09a835999c",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "Create signStr",
+        "func": "var client_id  = flow.get(\"tuya_client_id\");\nvar t = msg.time;\n\n\nvar method = \"GET\";\nvar sign_url = \"/v1.0/token?grant_type=1\";\n\n// Couldn't get nodered to process an empty string so this is a hash of an empty file\nvar content_hash = \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "78c850deae03dde5"
+            ]
+        ]
+    },
+    {
+        "id": "b4dc6d43a35e0fc9",
+        "type": "comment",
+        "z": "48610b6bdd9319c2",
+        "name": "Get Access Token",
+        "info": "",
+        "x": 130,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "0d3864eddec3bb61",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "Extract Token from Response",
+        "func": "var data = msg.payload;\nvar access = data.result.access_token;\nvar refresh = data.result.refresh_token;\n\nvar creds ={\n \"access_token\" : access,\n \"refresh_token\" : refresh\n}\nflow.set(\"tuya\", creds);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 220,
+        "wires": [
+            [
+                "f6c01b319cb20847"
+            ]
+        ]
+    },
+    {
+        "id": "ea7a04390b02ab5c",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "DEN1",
+        "func": "msg.time = Date.now();\nconst device_id = flow.get(\"device_id\");\n// Main logic\nif (msg.payload && msg.payload.data) {\n    const data = msg.payload.data;\n    let switchState = null;\n\n    if (typeof data.DEN1 === 'number') {\n        if (data.DEN1 === 1) {\n            switchState = true; // Bật đèn\n        } else if (data.DEN1 === 0) {\n            switchState = false; // Tắt đèn\n        } else {\n            node.warn(`Unexpected value for DEN1: ${data.DEN1}`);\n            return null;\n        }\n\n        msg.payload = {\n            \"code\": \"switch_1\",\n            \"value\": switchState\n        };\n        return msg;\n    }\n}\n\nnode.error(\"Invalid payload format\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "8a0ad87b6c23dab1"
+            ]
+        ]
+    },
+    {
+        "id": "09ed11314d9cb3db",
+        "type": "function",
+        "z": "48610b6bdd9319c2",
+        "name": "Settings CLICK SETUP TAB",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "var client_id = \"phwy3ntuvymux7mjpj5v\";\nvar user_id = \"\";\nvar device_id = \"eb88edc915c07b368dnqka\";\nflow.set(\"tuya_client_id\", client_id);\nflow.set(\"tuya_user_id\", user_id );\nflow.set(\"device_id\", device_id );",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "adf93a5a9e3caf79",
+        "type": "hmac",
+        "z": "48610b6bdd9319c2",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "074699ebae684a06a4b5930bbc36309b",
+        "x": 890,
+        "y": 280,
+        "wires": [
+            [
+                "fd16cc75caaf5346"
+            ]
+        ]
+    },
+    {
+        "id": "78c850deae03dde5",
+        "type": "hmac",
+        "z": "48610b6bdd9319c2",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "3555450465ed480ca1bf84d3e63d20eb",
+        "x": 490,
+        "y": 220,
+        "wires": [
+            [
+                "41f755d48b9d1380"
+            ]
+        ]
+    },
+    {
+        "id": "8a0ad87b6c23dab1",
+        "type": "digest",
+        "z": "48610b6bdd9319c2",
+        "name": "Hash the body data",
+        "algorithm": "SHA256",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "edef92a56186abef"
+            ]
+        ]
+    },
+    {
+        "id": "35631f1795325ecc",
+        "type": "mqtt in",
+        "z": "48610b6bdd9319c2",
+        "name": "",
+        "topic": "status_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "16c42e555d5cb688",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "ea7a04390b02ab5c"
+            ]
+        ]
+    },
+    {
+        "id": "f6c01b319cb20847",
+        "type": "debug",
+        "z": "48610b6bdd9319c2",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0dbf5572c2bc5b68",
+        "type": "debug",
+        "z": "48610b6bdd9319c2",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "cb97bfec04e8c911",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Create signStr",
+        "func": "// Lấy thông tin từ flow context\nlet creds = flow.get(\"tuya\");\nlet access_token = creds.access_token;\nlet client_id = flow.get(\"tuya_client_id\");\nlet device_id = flow.get(\"device_id\");\n\n// Chuẩn bị các thành phần để tạo chuỗi ký\nlet t = msg.time;\nlet method = \"POST\";\nlet sign_url = `/v1.0/iot-03/devices/${device_id}/commands`;\n\n// Tạo nội dung băm từ payload đã được hash SHA256 trong bước trước\nlet content_hash = msg.payload;\nlet string_to_sign = `${method}\\n${content_hash}\\n\\n${sign_url}`;\n\n// Chuỗi signStr để ký\nmsg.payload = client_id + access_token + t + string_to_sign;\n\n// Giữ lại timestamp\nmsg.time = t;\n\n// Trả lại msg để chuyển đến node tiếp theo (hmac)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 240,
+        "wires": [
+            [
+                "ad051b61fd726b2e"
+            ]
+        ]
+    },
+    {
+        "id": "bdd8d82ebbdfdf00",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "func": "var device_id = flow.get(\"device_id\");\nvar url = \"https://openapi.tuyaus.com/v1.0/iot-03/devices/\" + device_id + \"/commands\";\nvar t = msg.time;\nvar client_id = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar sign = msg.payload;\n\n// Use the originalPayload with commands from the previous node\nlet commands = msg.originalPayload?.commands || [];\n\nmsg.headers = {\n    \"sign_method\": \"HMAC-SHA256\",\n    \"client_id\": client_id,\n    \"t\": t.toString(),\n    \"mode\": \"cors\",\n    \"Content-Type\": \"application/json\",\n    \"sign\": sign.toUpperCase(),\n    \"access_token\": access_token\n};\n\n// Set the payload with the commands array\nmsg.payload = {\n    \"commands\": commands\n};\n\n// Convert the payload to string for the API request\nmsg.payload = JSON.stringify(msg.payload);\nmsg.url = url;\nmsg.method = \"POST\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 240,
+        "wires": [
+            [
+                "a4ea8083d783bfc6"
+            ]
+        ]
+    },
+    {
+        "id": "a4ea8083d783bfc6",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 1370,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ca298aafa88e9a8",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "func": "var url = \"https://openapi.tuyaus.com/v1.0/token?grant_type=1\";\nvar t = msg.time;\nvar sign = msg.payload;\nvar client_id  = flow.get(\"tuya_client_id\");\nmsg.headers ={\n \"sign_method\": \"HMAC-SHA256\",\n \"client_id\" : client_id,\n \"t\": t.toString(),\n \"sign\": sign.toUpperCase(),\n },\n msg.payload = '';\n msg.url = url;\n msg.method = \"GET\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "5659469dca5dcb3d"
+            ]
+        ]
+    },
+    {
+        "id": "5659469dca5dcb3d",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 830,
+        "y": 140,
+        "wires": [
+            [
+                "ae75b542ca8c8921"
+            ]
+        ]
+    },
+    {
+        "id": "55ff09f50d726d7e",
+        "type": "inject",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "2f632409df89d0c8"
+            ]
+        ]
+    },
+    {
+        "id": "2f632409df89d0c8",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Create signStr",
+        "func": "var client_id  = flow.get(\"tuya_client_id\");\nvar t = msg.time;\n\n\nvar method = \"GET\";\nvar sign_url = \"/v1.0/token?grant_type=1\";\n\n// Couldn't get nodered to process an empty string so this is a hash of an empty file\nvar content_hash = \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\nvar string_to_sign = method+\"\\n\"+content_hash+\"\\n\"+\"\"+\"\\n\"+sign_url;\nvar signStr = client_id+t+string_to_sign;\n\nmsg.payload = signStr;\nmsg.time = msg.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "50f13fa5e4ea6e7d"
+            ]
+        ]
+    },
+    {
+        "id": "6269fe3d41870a7a",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "Get Access Token",
+        "info": "",
+        "x": 90,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ae75b542ca8c8921",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Extract Token from Response",
+        "func": "var data = msg.payload;\nvar access = data.result.access_token;\nvar refresh = data.result.refresh_token;\n\nvar creds ={\n \"access_token\" : access,\n \"refresh_token\" : refresh\n}\nflow.set(\"tuya\", creds);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2151d6c0fd658ba3",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "DEN-HHN-SAU",
+        "func": "// Set msg.time to the current timestamp in milliseconds\nmsg.time = Date.now();\nconst device_id = flow.get(\"device_id\");\n// Main logic\nif (msg.payload && msg.payload.data) {\n    const data = msg.payload.data;\n    let switchCommands = [];\n\n    // Handle DEN_XUONG_4 -> switch_1\n    if (typeof data.DEN_XUONG_4 === 'number') {\n        if (data.DEN_XUONG_4 === 1 || data.DEN_XUONG_4 === 0) {\n            switchCommands.push({\n                \"code\": \"switch_1\",\n                \"value\": data.DEN_XUONG_4 === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_XUONG_4: ${data.DEN_XUONG_4}`);\n        }\n    }\n\n    // Handle DEN_XUONG_5 -> switch_2\n    if (typeof data.DEN_XUONG_5 === 'number') {\n        if (data.DEN_XUONG_5 === 1 || data.DEN_XUONG_5 === 0) {\n            switchCommands.push({\n                \"code\": \"switch_2\",\n                \"value\": data.DEN_XUONG_5 === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_XUONG_5: ${data.DEN_XUONG_5}`);\n        }\n    }\n\n    // Handle DEN_GAN_NHA_VE_SINH -> switch_3\n    if (typeof data.DEN_GAN_NHA_VE_SINH === 'number') {\n        if (data.DEN_GAN_NHA_VE_SINH === 1 || data.DEN_GAN_NHA_VE_SINH === 0) {\n            switchCommands.push({\n                \"code\": \"switch_3\",\n                \"value\": data.DEN_GAN_NHA_VE_SINH === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_GAN_NHA_VE_SINH: ${data.DEN_GAN_NHA_VE_SINH}`);\n        }\n    }\n\n    // If we have any valid commands, create the payload\n    if (switchCommands.length > 0) {\n        const payload = {\n            \"commands\": switchCommands\n        };\n        msg.originalPayload = payload;\n        msg.payload = JSON.stringify(payload);\n        return msg;\n    }\n} else {\n    node.error(\"msg.payload.data is undefined\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "0fa6bee5f68e0a41"
+            ]
+        ]
+    },
+    {
+        "id": "b67b4e0b0b52898c",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Settings CLICK SETUP TAB",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "var client_id = \"khur7vyn7tcus3ej8t5x\";\nvar user_id = \"\";\nvar device_id = \"35150401a4e57cbcd03a\";\nflow.set(\"tuya_client_id\", client_id);\nflow.set(\"tuya_user_id\", user_id );\nflow.set(\"device_id\", device_id );",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "065ad23cbf812f09",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "DEN-HHN-TRUOC",
+        "func": "// Set msg.time to the current timestamp in milliseconds\nmsg.time = Date.now();\nconst device_id1 = flow.get(\"device_id1\");\n// Main logic\nif (msg.payload && msg.payload.data) {\n    const data = msg.payload.data;\n    let switchCommands = [];\n\n    // Handle DEN_XUONG_4 -> switch_1\n    if (typeof data.DEN_KHU_VUC_BEP === 'number') {\n        if (data.DEN_KHU_VUC_BEP === 1 || data.DEN_KHU_VUC_BEP === 0) {\n            switchCommands.push({\n                \"code\": \"switch_1\",\n                \"value\": data.DEN_KHU_VUC_BEP === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_KHU_VUC_BEP: ${data.DEN_KHU_VUC_BEP}`);\n        }\n    }\n\n    // Handle DEN_XUONG_5 -> switch_2\n    if (typeof data.DEN_XUONG_2 === 'number') {\n        if (data.DEN_XUONG_2 === 1 || data.DEN_XUONG_2 === 0) {\n            switchCommands.push({\n                \"code\": \"switch_2\",\n                \"value\": data.DEN_XUONG_2 === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_XUONG_2: ${data.DEN_XUONG_2}`);\n        }\n    }\n\n    // Handle DEN_GAN_NHA_VE_SINH -> switch_3\n    if (typeof data.DEN_XUONG_3 === 'number') {\n        if (data.DEN_XUONG_3 || data.DEN_XUONG_3 === 0) {\n            switchCommands.push({\n                \"code\": \"switch_3\",\n                \"value\": data.DEN_XUONG_3 === 1\n            });\n        } else {\n            node.warn(`Unexpected value for DEN_XUONG_3: ${data.DEN_XUONG_3}`);\n        }\n    }\n\n    // If we have any valid commands, create the payload\n    if (switchCommands.length > 0) {\n        const payload = {\n            \"commands\": switchCommands\n        };\n        msg.originalPayload = payload;\n        msg.payload = JSON.stringify(payload);\n        return msg;\n    }\n} else {\n    node.error(\"msg.payload.data is undefined\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "09def7f0a2abf34d"
+            ]
+        ]
+    },
+    {
+        "id": "5178bfd40ea6ad0a",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Settings CLICK SETUP TAB",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "var client_id = \"khur7vyn7tcus3ej8t5x\";\nvar user_id = \"\";\nvar device_id1 = \"35150401e868e7d4b882\";\nflow.set(\"tuya_client_id\", client_id);\nflow.set(\"tuya_user_id\", user_id );\nflow.set(\"device_id1\", device_id1 );",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cc5da1d92014c10a",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Create signStr",
+        "func": "// Lấy thông tin từ flow context\nlet creds = flow.get(\"tuya\");\nlet access_token = creds.access_token;\nlet client_id = flow.get(\"tuya_client_id\");\nlet device_id1 = flow.get(\"device_id1\");\n\n// Chuẩn bị các thành phần để tạo chuỗi ký\nlet t = msg.time;\nlet method = \"POST\";\nlet sign_url = `/v1.0/iot-03/devices/${device_id1}/commands`;\n\n// Tạo nội dung băm từ payload đã được hash SHA256 trong bước trước\nlet content_hash = msg.payload;\nlet string_to_sign = `${method}\\n${content_hash}\\n\\n${sign_url}`;\n\n// Chuỗi signStr để ký\nmsg.payload = client_id + access_token + t + string_to_sign;\n\n// Giữ lại timestamp\nmsg.time = t;\n\n// Trả lại msg để chuyển đến node tiếp theo (hmac)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "08ee2bb1fd2b8eba"
+            ]
+        ]
+    },
+    {
+        "id": "e6df1b8e80eceed0",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "func": "var device_id1 = flow.get(\"device_id1\");\nvar url = \"https://openapi.tuyaus.com/v1.0/iot-03/devices/\" + device_id1 + \"/commands\";\nvar t = msg.time;\nvar client_id = flow.get(\"tuya_client_id\");\nvar creds = flow.get(\"tuya\");\nvar access_token = creds.access_token;\nvar sign = msg.payload;\n\n// Use the originalPayload with commands from the previous node\nlet commands = msg.originalPayload?.commands || [];\n\nmsg.headers = {\n    \"sign_method\": \"HMAC-SHA256\",\n    \"client_id\": client_id,\n    \"t\": t.toString(),\n    \"mode\": \"cors\",\n    \"Content-Type\": \"application/json\",\n    \"sign\": sign.toUpperCase(),\n    \"access_token\": access_token\n};\n\n// Set the payload with the commands array\nmsg.payload = {\n    \"commands\": commands\n};\n\n// Convert the payload to string for the API request\nmsg.payload = JSON.stringify(msg.payload);\nmsg.url = url;\nmsg.method = \"POST\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 300,
+        "wires": [
+            [
+                "d63df73d30f03714"
+            ]
+        ]
+    },
+    {
+        "id": "d63df73d30f03714",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 1370,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad051b61fd726b2e",
+        "type": "hmac",
+        "z": "f1d2d6fa4514915b",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "074699ebae684a06a4b5930bbc36309b",
+        "x": 990,
+        "y": 240,
+        "wires": [
+            [
+                "bdd8d82ebbdfdf00"
+            ]
+        ]
+    },
+    {
+        "id": "50f13fa5e4ea6e7d",
+        "type": "hmac",
+        "z": "f1d2d6fa4514915b",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "074699ebae684a06a4b5930bbc36309b",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "3ca298aafa88e9a8"
+            ]
+        ]
+    },
+    {
+        "id": "08ee2bb1fd2b8eba",
+        "type": "hmac",
+        "z": "f1d2d6fa4514915b",
+        "name": "Sign signStr with secret",
+        "algorithm": "HmacSHA256",
+        "key": "074699ebae684a06a4b5930bbc36309b",
+        "x": 990,
+        "y": 300,
+        "wires": [
+            [
+                "e6df1b8e80eceed0"
+            ]
+        ]
+    },
+    {
+        "id": "0fa6bee5f68e0a41",
+        "type": "digest",
+        "z": "f1d2d6fa4514915b",
+        "name": "Hash the body data",
+        "algorithm": "SHA256",
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "cb97bfec04e8c911"
+            ]
+        ]
+    },
+    {
+        "id": "09def7f0a2abf34d",
+        "type": "digest",
+        "z": "f1d2d6fa4514915b",
+        "name": "Hash the body data",
+        "algorithm": "SHA256",
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "cc5da1d92014c10a"
+            ]
+        ]
+    },
+    {
+        "id": "c9ce7dcfd18c6516",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Prepare Supabase Query",
+        "func": "const username = msg.payload.data.username;\nconst password = msg.payload.data.password;\n\nif (!username || !password) {\n    msg.payload = {data: 0,admin:0};\n}\n\nmsg.headers = {\n    \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\"\n};\nmsg.url = `https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH?username=eq.${username}`;\nmsg.method = \"GET\";\nmsg.inputPassword = password; // Gửi mật khẩu sang node tiếp theo để so sánh\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "ae6274c419195a93"
+            ]
+        ]
+    },
+    {
+        "id": "ae6274c419195a93",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Query Supabase",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 600,
+        "wires": [
+            [
+                "c73cdc7f00d1f2b9"
+            ]
+        ]
+    },
+    {
+        "id": "75da4d75bbd09451",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Send Email via Mailjet",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.mailjet.com/v3.1/send",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1560,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5c9007e96f0232cb",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Build Mailjet Payload",
+        "func": "const password = msg.payload.password; // Lấy mật khẩu từ payload\nconst recipientEmail = msg.payload.email; // Lấy địa chỉ email từ payload\n\nif (!password || !recipientEmail) {\n    node.error(\"Missing password or recipient email\", msg);\n    return null;\n}\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Basic \" + Buffer.from(\"bd9e2b8dbc0afe38729dc3f241b0070c:95863c8bcd785a4e6f19b09e6c4d698b\").toString(\"base64\")\n};\n\nmsg.payload = {\n    \"Messages\": [\n        {\n            \"From\": {\n                \"Email\": \"cloudscada.ISSH@gmail.com\",\n                \"Name\": \"CLOUD SCADA VBOX\"\n            },\n            \"To\": [\n                {\n                    \"Email\": recipientEmail, // Sử dụng email từ payload\n                    \"Name\": \"Recipient Name\"\n                }\n            ],\n            \"Subject\": \"Password Reset\",\n            \"TextPart\": `Your password is: ${password}`, // Thêm mật khẩu vào nội dung tin nhắn\n        }\n    ]\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 700,
+        "wires": [
+            [
+                "75da4d75bbd09451"
+            ]
+        ]
+    },
+    {
+        "id": "5663f62c8558ab61",
+        "type": "switch",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "property": "payload.data.request_resetpass",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "c9ce7dcfd18c6516"
+            ],
+            [
+                "3ebbb7308082aec0"
+            ]
+        ]
+    },
+    {
+        "id": "3ebbb7308082aec0",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Prepare Supabase Query 1",
+        "func": "const username = msg.payload.data.username;\nconst email = msg.payload.data.email;\n\nif (!username || !email) {\n    node.error(\"Missing username or email\", msg);\n    return null;\n}\n\nmsg.headers = {\n    \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\"\n}\nmsg.url = `https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH?username=eq.${username}&email=eq.${email}`;\nmsg.method = \"GET\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "55d4d4c82def7d9d"
+            ]
+        ]
+    },
+    {
+        "id": "55d4d4c82def7d9d",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Query Supabase1",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 700,
+        "wires": [
+            [
+                "bd4909556d356141"
+            ]
+        ]
+    },
+    {
+        "id": "bd4909556d356141",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Validate Password",
+        "func": "if (!msg.payload || msg.payload.length === 0) {\n    msg.payload = { data: 0, message: \"User not found\" }; // Không tìm thấy người dùng\n} else {\n    const user = msg.payload[0]; // Lấy thông tin người dùng đầu tiên\n    const password = user.password; // Lấy mật khẩu từ cơ sở dữ liệu\n    const email = user.email;\n    msg.payload = { data: 1,email:email, password: password, message: \"User found\" }; // Trả về mật khẩu\n}\nmsg.topic = \"subtop\"; // Đặt topic cho MQTT\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 700,
+        "wires": [
+            [
+                "5c9007e96f0232cb"
+            ]
+        ]
+    },
+    {
+        "id": "34cebf2244dc6de3",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "Login",
+        "info": "",
+        "x": 470,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "73e0c8fee6d49aee",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "Reset password",
+        "info": "",
+        "x": 500,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "1b0ee99a60de7c6b",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "pubtop",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 50,
+        "y": 660,
+        "wires": [
+            [
+                "5663f62c8558ab61",
+                "b7b1b3adb78603cb",
+                "2eed196ff4584677"
+            ]
+        ]
+    },
+    {
+        "id": "616df03dba612d9a",
+        "type": "mqtt out",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "subtop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af96de71051eab08",
+        "x": 1270,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "8635ed444cab36b0",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Query Supabase",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 940,
+        "wires": [
+            [
+                "572b8368f52a2d18"
+            ]
+        ]
+    },
+    {
+        "id": "572b8368f52a2d18",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Validate and Update Password",
+        "func": "if (!msg.payload || msg.payload.length === 0) {\n    node.error(\"User not found\", msg);\n    return null;\n}\n\nconst user = msg.payload[0];\nconst inputPassword = msg.inputPassword;\nconst newPassword = msg.newPassword;\n\nif (user.password === inputPassword) {\n    // Nếu mật khẩu đúng, chuẩn bị payload để cập nhật mật khẩu\n    msg.headers = {\n        \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n        \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\"\n    };\n    msg.url = `https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH?username=eq.${user.username}`;\n    msg.method = \"PATCH\";\n    msg.payload = {\n        password: newPassword\n    };\n    return msg;\n} else {\n    node.error(\"Incorrect password\", msg);\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 940,
+        "wires": [
+            [
+                "dadbc64c48aabe02"
+            ]
+        ]
+    },
+    {
+        "id": "dadbc64c48aabe02",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Update Password in Supabase",
+        "method": "PATCH",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1370,
+        "y": 940,
+        "wires": [
+            [
+                "cdd1bc84f17664a4"
+            ]
+        ]
+    },
+    {
+        "id": "cdd1bc84f17664a4",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Send MQTT Success Message",
+        "func": "msg.topic = \"subtop\";\nmsg.payload = {statuschange: \"Password successfully changed\"};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 840,
+        "wires": [
+            [
+                "668db46e16d46fc1"
+            ]
+        ]
+    },
+    {
+        "id": "668db46e16d46fc1",
+        "type": "mqtt out",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "subtop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af96de71051eab08",
+        "x": 1650,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1d160cc4982dbf29",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Prepare Supabase Query",
+        "func": "const username = msg.payload.data.username;\nconst password = msg.payload.data.password;\nconst newpassword = msg.payload.data.newpassword;\nconst confirm = msg.payload.data.confirm;\n\nif (confirm !== 1) {\n    node.error(\"Confirm flag is not set to 1\", msg);\n    return null;\n}\n\nif (!username || !password || !newpassword) {\n    node.error(\"Missing username, password, or newpassword\", msg);\n    return null;\n}\n\nmsg.headers = {\n    \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\"\n};\nmsg.url = `https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH?username=eq.${username}`;\nmsg.method = \"GET\";\nmsg.inputPassword = password; // Gửi mật khẩu cũ sang node tiếp theo\nmsg.newPassword = newpassword; // Gửi mật khẩu mới sang node tiếp theo\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 940,
+        "wires": [
+            [
+                "8635ed444cab36b0"
+            ]
+        ]
+    },
+    {
+        "id": "b7b1b3adb78603cb",
+        "type": "switch",
+        "z": "f1d2d6fa4514915b",
+        "name": "Check confirm",
+        "property": "payload.data.change_pass",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 940,
+        "wires": [
+            [
+                "1d160cc4982dbf29"
+            ]
+        ]
+    },
+    {
+        "id": "bd99dcab89b05cfd",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "change password",
+        "info": "",
+        "x": 480,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "dc5f5e57df8ff78e",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "status_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "2151d6c0fd658ba3",
+                "065ad23cbf812f09"
+            ]
+        ]
+    },
+    {
+        "id": "2eed196ff4584677",
+        "type": "switch",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "property": "payload.data.confirmreg",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 140,
+        "y": 1080,
+        "wires": [
+            [
+                "2ced17a6600d1d9f"
+            ]
+        ]
+    },
+    {
+        "id": "e965991dbc0db154",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "register",
+        "info": "",
+        "x": 310,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "2ced17a6600d1d9f",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Prepare Supabase Query 2",
+        "func": "// Trích xuất các giá trị từ payload\nconst newusername = msg.payload.data.newusername;\nconst newpassword = msg.payload.data.regpass;\nconst newemail = msg.payload.data.newemail;\nlet selectrole = msg.payload.data.selectrole; // Sử dụng let thay vì const\n\n// Kiểm tra giá trị của selectrole và gán giá trị tương ứng\nif (selectrole === 1) {\n    selectrole = \"admin\";\n} else if (selectrole === 0) {\n    selectrole = \"user\";\n}\n\n// Chuẩn bị dữ liệu để gửi đến Supabase\nmsg.payload = {\n    username: newusername,\n    password: newpassword,\n    email: newemail,\n    role: selectrole\n};\n\n// Thiết lập headers và URL\nmsg.headers = {\n    \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Content-Type\": \"application/json\"\n};\nmsg.url = \"https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH\";\nmsg.method = \"POST\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1080,
+        "wires": [
+            [
+                "d107cdca3cb8da24"
+            ]
+        ]
+    },
+    {
+        "id": "d107cdca3cb8da24",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Query Supabase",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 770,
+        "y": 1080,
+        "wires": [
+            [
+                "a1ed4f747b4dedd4"
+            ]
+        ]
+    },
+    {
+        "id": "a1ed4f747b4dedd4",
+        "type": "switch",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "23505",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 970,
+        "y": 1080,
+        "wires": [
+            [
+                "5ca1c636a6921b61"
+            ]
+        ]
+    },
+    {
+        "id": "5ca1c636a6921b61",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "function 1",
+        "func": "msg.topic = \"subtop\";\nmsg.payload = { regstatus: \"Username duplicated\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 1080,
+        "wires": [
+            [
+                "668db46e16d46fc1"
+            ]
+        ]
+    },
+    {
+        "id": "a755489ec92a10bd",
+        "type": "inject",
+        "z": "f1d2d6fa4514915b",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 1220,
+        "wires": [
+            [
+                "27125e3c8fa7786e"
+            ]
+        ]
+    },
+    {
+        "id": "27125e3c8fa7786e",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Create URL",
+        "func": "var cityName = \"Ho Chi Minh\";\nvar APIkey = '61e0486436444785864163216242612';\nvar encodedCity = encodeURIComponent(cityName);\nvar url = \"http://api.weatherapi.com/v1/current.json?key=\" + APIkey + \"&q=\" + encodedCity + \"&aqi=no\";\n\nmsg.url = url;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1220,
+        "wires": [
+            [
+                "b073d299d24f1a8a"
+            ]
+        ]
+    },
+    {
+        "id": "b073d299d24f1a8a",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "Fetch Weather Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 620,
+        "y": 1220,
+        "wires": [
+            [
+                "7edac4788dd9721a"
+            ]
+        ]
+    },
+    {
+        "id": "7edac4788dd9721a",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Process JSON",
+        "func": "var body = msg.payload;\nvar jsonBody = body;\n\nif (jsonBody && jsonBody.current) {\n    var temp_c = jsonBody.current.temp_c;\n    var humidity = jsonBody.current.humidity;\n    msg.payload = {\n        temperature: temp_c,\n        humidity: humidity\n    };\n} else {\n    msg.payload = \"No current weather data found in the response.\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 1220,
+        "wires": [
+            [
+                "668db46e16d46fc1"
+            ]
+        ]
+    },
+    {
+        "id": "c73cdc7f00d1f2b9",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Validate Password",
+        "func": "if (!msg.payload || msg.payload.length === 0) {\n    msg.payload = { data: 0, message: \"User not found\" }; // Trường hợp không tìm thấy người dùng\n} else if (!msg.inputPassword) {\n    msg.payload = { data: 0,admin: 0, message: \"Missing password\" }; // Trường hợp thiếu password\n} else {\n    const user = msg.payload[0]; // Supabase trả về danh sách tối đa 1 người dùng\n    const inputPassword = msg.inputPassword; // Mật khẩu người dùng nhập vào\n\n    if (user.password === inputPassword) {\n        if (user.role === \"admin\") {\n            msg.payload = { data: 1, admin: 1, message: \"Login successful (Admin)\" }; // Thành công với admin\n        } else {\n            msg.payload = { data: 1, admin: 0, message: \"Login successful\" }; // Thành công nhưng không phải admin\n        }\n    } else {\n        msg.payload = { data: 0, admin: 0, message: \"Incorrect password\" }; // Sai mật khẩu\n    }\n}\nmsg.topic = \"subtop\"; // Đặt topic cho MQTT\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 600,
+        "wires": [
+            [
+                "616df03dba612d9a"
+            ]
+        ]
+    },
+    {
+        "id": "c251d5c0b6792be8",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "schedule_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 1360,
+        "wires": [
+            [
+                "480677c530bb682e",
+                "86906b7a61b2d542",
+                "d314558cf0cdaaa1",
+                "63106edb23b65928"
+            ]
+        ]
+    },
+    {
+        "id": "946863e274c3e5a9",
+        "type": "mqtt out",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "subtop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af96de71051eab08",
+        "x": 1410,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "480677c530bb682e",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Check status_auto_front",
+        "func": "let front_intervalId = context.get('front_intervalId') || null;\nconst front_previousSetTimeAutoFront = context.get('front_previousSetTimeAutoFront') || null;\n\nconst scheduleData = msg.payload.data;\nconst statusAutoFront = scheduleData.status_auto_front;\nconst setTimeAutoFront = scheduleData.set_time_autofront;\nconst withinFrontTime = scheduleData.withinfronttime; // Lấy giá trị withinfronttime (số phút)\n\n// Nếu set_time_autofront thay đổi, hủy interval hiện tại và thiết lập lại\nif (setTimeAutoFront !== front_previousSetTimeAutoFront && front_intervalId) {\n    clearInterval(front_intervalId);\n    front_intervalId = null;\n    context.set('front_intervalId', null);\n    node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n}\n\n// Nếu status_auto_front = 1 và chưa có interval, thiết lập vòng lặp mỗi phút\nif (statusAutoFront === 1 && !front_intervalId) {\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${setTimeAutoFront} mỗi ngày.`);\n\n    front_intervalId = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào đầu giờ thứ setTimeAutoFront\n        if (currentHour === setTimeAutoFront && currentMinute === 0 && currentSecond === 0) {\n            // Gửi payload { \"data\": { \"autofrontwatering\": 1 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"autofrontwatering\": 1 } }\n            });\n\n            // Sau 10 giây, gửi payload { \"data\": { \"autofrontwatering\": 0 } }\n            setTimeout(() => {\n                node.send({\n                    topic: \"subtop\",\n                    payload: { \"data\": { \"autofrontwatering\": 0 } }\n                });\n            }, 10000);  // 10000 ms = 10 giây\n\n            // Sau withinfronttime phút, gửi payload { \"data\": { \"offfrontwatering\": 1 } }\n            setTimeout(() => {\n                node.send({\n                    topic: \"subtop\",\n                    payload: { \"data\": { \"offfrontwatering\": 1 } }\n                });\n\n                // Sau 10 giây, gửi payload { \"data\": { \"offfrontwatering\": 0 } }\n                setTimeout(() => {\n                    node.send({\n                        topic: \"subtop\",\n                        payload: { \"data\": { \"offfrontwatering\": 0 } }\n                    });\n                }, 10000);  // 10000 ms = 10 giây\n            }, withinFrontTime * 60000);  // Chuyển đổi withinfronttime từ phút sang mili giây\n        }\n    }, 1000);  // Kiểm tra mỗi giây\n\n    context.set('front_intervalId', front_intervalId);\n    context.set('front_previousSetTimeAutoFront', setTimeAutoFront);\n}\n\n// Nếu status_auto_front = 0 và có interval, dừng vòng lặp\nif (statusAutoFront === 0 && front_intervalId) {\n    clearInterval(front_intervalId);\n    context.set('front_intervalId', null);\n    context.set('front_previousSetTimeAutoFront', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1360,
+        "wires": [
+            [
+                "946863e274c3e5a9"
+            ]
+        ]
+    },
+    {
+        "id": "43aa1416a5a6b45f",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "Auto bom truoc",
+        "info": "",
+        "x": 700,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "33a3c093f5c088b9",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "Auto bom sau",
+        "info": "",
+        "x": 690,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "86906b7a61b2d542",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Check status_auto_front",
+        "func": "let rear_intervalId = context.get('rear_intervalId') || null;\nconst rear_previousSetTimeAutoRear = context.get('rear_previousSetTimeAutoRear') || null;\n\nconst scheduleData = msg.payload.data;\nconst status_auto_rear = scheduleData.status_auto_rear;\nconst set_time_autoRear = scheduleData.set_time_autoRear;\nconst withinreartime = scheduleData.withinreartime; // Lấy giá trị withinreartime (số phút)\n\n// Nếu set_time_autoRear thay đổi, hủy interval hiện tại và thiết lập lại\nif (set_time_autoRear !== rear_previousSetTimeAutoRear && rear_intervalId) {\n    clearInterval(rear_intervalId);\n    rear_intervalId = null;\n    context.set('rear_intervalId', null);\n    node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n}\n\n// Nếu status_auto_rear = 1 và chưa có interval, thiết lập vòng lặp mỗi phút\nif (status_auto_rear === 1 && !rear_intervalId) {\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${set_time_autoRear} mỗi ngày.`);\n\n    rear_intervalId = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào đầu giờ thứ set_time_autoRear\n        if (currentHour === set_time_autoRear && currentMinute === 0 && currentSecond === 0) {\n            // Gửi payload { \"data\": { \"autorearwatering\": 1 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"autorearwatering\": 1 } }\n            });\n\n            // Sau 10 giây, gửi payload { \"data\": { \"autorearwatering\": 0 } }\n            setTimeout(() => {\n                node.send({\n                    topic: \"subtop\",\n                    payload: { \"data\": { \"autorearwatering\": 0 } }\n                });\n            }, 10000);  // 10000 ms = 10 giây\n\n            // Sau withinreartime phút, gửi payload { \"data\": { \"offrearwatering\": 1 } }\n            setTimeout(() => {\n                node.send({\n                    topic: \"subtop\",\n                    payload: { \"data\": { \"offrearwatering\": 1 } }\n                });\n\n                // Sau 10 giây, gửi payload { \"data\": { \"offrearwatering\": 0 } }\n                setTimeout(() => {\n                    node.send({\n                        topic: \"subtop\",\n                        payload: { \"data\": { \"offrearwatering\": 0 } }\n                    });\n                }, 10000);  // 10000 ms = 10 giây\n            }, withinreartime * 60000);  // Chuyển đổi withinreartime từ phút sang mili giây\n        }\n    }, 1000);  // Kiểm tra mỗi giây\n\n    context.set('rear_intervalId', rear_intervalId);\n    context.set('rear_previousSetTimeAutoRear', set_time_autoRear);\n}\n\n// Nếu status_auto_rear = 0 và có interval, dừng vòng lặp\nif (status_auto_rear === 0 && rear_intervalId) {\n    clearInterval(rear_intervalId);\n    context.set('rear_intervalId', null);\n    context.set('rear_previousSetTimeAutoRear', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1580,
+        "wires": [
+            [
+                "946863e274c3e5a9"
+            ]
+        ]
+    },
+    {
+        "id": "d314558cf0cdaaa1",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Autooff",
+        "func": "// Lấy giá trị từ msg.payload.data\nconst scheduleData = msg.payload.data;\nconst confirm_auto_off_front = scheduleData.confirm_auto_off_front;\nconst withinfronttime = scheduleData.withinfronttime; // Lấy giá trị withinfronttime (số phút)\n\n// Kiểm tra nếu confirm_auto_off_front = 1\nif (confirm_auto_off_front === 1) {\n    // Đợi trong khoảng thời gian withinfronttime (phút)\n    setTimeout(() => {\n        // Gửi tin nhắn { \"data\": { \"offfrontwatering\": 1 } }\n        node.send({\n            topic: \"subtop\",\n            payload: { \"data\": { \"offfrontwatering\": 1 } }\n        });\n\n        // Sau 10 giây, gửi hai tin nhắn\n        setTimeout(() => {\n            // Gửi tin nhắn { \"data\": { \"offfrontwatering\": 0 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"offfrontwatering\": 0 } }\n            });\n\n            // Gửi tin nhắn { \"data\": { \"confirmofffront\": 0 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"confirmofffront\": 0 } }\n            });\n        }, 10000); // 10 giây\n    }, withinfronttime * 60000); // Chuyển đổi withinfronttime từ phút sang mili giây\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 1440,
+        "wires": [
+            [
+                "946863e274c3e5a9"
+            ]
+        ]
+    },
+    {
+        "id": "aff991f7ddf4e81a",
+        "type": "comment",
+        "z": "f1d2d6fa4514915b",
+        "name": "autooff",
+        "info": "",
+        "x": 670,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "63106edb23b65928",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "autooffbomsau",
+        "func": "// Lấy giá trị từ msg.payload.data\nconst scheduleData = msg.payload.data;\nconst confirm_auto_off_rear = scheduleData.confirm_auto_off_rear;\nconst auto_off_REAR_after = scheduleData.auto_off_REAR_after; // Lấy giá trị auto_off_REAR_after (số phút)\n\n// Kiểm tra nếu confirm_auto_off_rear = 1\nif (confirm_auto_off_rear === 1) {\n    // Đợi trong khoảng thời gian auto_off_REAR_after (phút)\n    setTimeout(() => {\n        // Gửi tin nhắn { \"data\": { \"offrearwatering\": 1 } }\n        node.send({\n            topic: \"subtop\",\n            payload: { \"data\": { \"offrearwatering\": 1 } }\n        });\n\n        // Sau 10 giây, gửi hai tin nhắn\n        setTimeout(() => {\n            // Gửi tin nhắn { \"data\": { \"offrearwatering\": 0 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"offrearwatering\": 0 } }\n            });\n\n            // Gửi tin nhắn { \"data\": { \"confirmoffrear\": 0 } }\n            node.send({\n                topic: \"subtop\",\n                payload: { \"data\": { \"confirmoffrear\": 0 } }\n            });\n        }, 10000); // 10 giây\n    }, auto_off_REAR_after * 60000); // Chuyển đổi auto_off_REAR_after từ phút sang mili giây\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1640,
+        "wires": [
+            [
+                "946863e274c3e5a9"
+            ]
+        ]
+    },
+    {
+        "id": "739ad0fc2f41eec9",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "schedule_light_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 1800,
+        "wires": [
+            [
+                "9040eb492b863316",
+                "f7f445828fdb424d"
+            ]
+        ]
+    },
+    {
+        "id": "9040eb492b863316",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "AUTOONDEN",
+        "func": "let intervalIdOnDen = context.get('intervalIdOnDen') || null;\nlet previousTimeOnAllDen = context.get('previousTimeOnAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmONALLden = eventData.confirmONALLden;\nconst timeonall = eventData.timeonall;\n\n// Nếu confirmONALLden = 1 và timeonall thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmONALLden === 1 && timeonall !== previousTimeOnAllDen) {\n    if (intervalIdOnDen) {\n        clearInterval(intervalIdOnDen);\n        intervalIdOnDen = null;\n        context.set('intervalIdOnDen', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdOnDen = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ timeonall\n        if (currentHour === timeonall && currentMinute === 0 && currentSecond === 0) {\n            // Gửi tất cả các thông tin trong một tin nhắn duy nhất\n            node.send({\n                topic: \"subtop\",\n                payload: {\n                    data: {\n                        DEN_GAN_NHA_VE_SINH: 1,\n                        DEN_XUONG_5: 1,\n                        DEN_XUONG_4: 1,\n                        DEN_KHU_VUC_BEP: 1,\n                        DEN_XUONG_2: 1,\n                        DEN_XUONG_3: 1,\n                        LED_VANG: 1,\n                        DEN_BANG: 1\n                    }\n                }\n            });\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdOnDen', intervalIdOnDen);\n    context.set('previousTimeOnAllDen', timeonall);\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${timeonall} mỗi ngày.`);\n}\n\n// Nếu confirmONALLden = 0 và có interval, dừng vòng lặp\nif (confirmONALLden === 0 && intervalIdOnDen) {\n    clearInterval(intervalIdOnDen);\n    context.set('intervalIdOnDen', null);\n    context.set('previousTimeOnAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1780,
+        "wires": [
+            [
+                "183b1bdea145b5fc"
+            ]
+        ]
+    },
+    {
+        "id": "183b1bdea145b5fc",
+        "type": "mqtt out",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "subtop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af96de71051eab08",
+        "x": 1090,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "f7f445828fdb424d",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "AUTOOFFDEN",
+        "func": "let intervalIdOffDen = context.get('intervalIdOffDen') || null;\nlet previousTimeOffAllDen = context.get('previousTimeOffAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmOFFALLden = eventData.confirmOFFALLden;\nconst timeoffall = eventData.timeoffall;\n\n// Nếu confirmOFFALLden = 1 và timeoffall thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmOFFALLden === 1 && timeoffall !== previousTimeOffAllDen) {\n    if (intervalIdOffDen) {\n        clearInterval(intervalIdOffDen);\n        intervalIdOffDen = null;\n        context.set('intervalIdOffDen', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdOffDen = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ timeoffall\n        if (currentHour === timeoffall && currentMinute === 0 && currentSecond === 0) {\n            // Gửi các tin nhắn với giá trị 0 cho tất cả các bulb\n            node.send({\n                topic: \"subtop\",\n                payload: {\n                    data: {\n                        DEN_GAN_NHA_VE_SINH: 0,\n                        DEN_XUONG_5: 0,\n                        DEN_XUONG_4: 0,\n                        DEN_KHU_VUC_BEP: 0,\n                        DEN_XUONG_2: 0,\n                        DEN_XUONG_3: 0,\n                        LED_VANG: 0,\n                        DEN_BANG: 0\n                    }\n                }\n            });\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdOffDen', intervalIdOffDen);\n    context.set('previousTimeOffAllDen', timeoffall);\n    node.warn(`Bắt đầu gửi tin nhắn tắt đèn vào giờ thứ ${timeoffall} mỗi ngày.`);\n}\n\n// Nếu confirmOFFALLden = 0 và có interval, dừng vòng lặp\nif (confirmOFFALLden === 0 && intervalIdOffDen) {\n    clearInterval(intervalIdOffDen);\n    context.set('intervalIdOffDen', null);\n    context.set('previousTimeOffAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn tắt đèn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1900,
+        "wires": [
+            [
+                "183b1bdea145b5fc"
+            ]
+        ]
+    },
+    {
+        "id": "1ac9792d6bd2915b",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "schedule_custom_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 2000,
+        "wires": [
+            [
+                "73a43346ca03dede"
+            ]
+        ]
+    },
+    {
+        "id": "73a43346ca03dede",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Customden",
+        "func": "let intervalIdCustom = context.get('intervalIdCustom') || null;\nlet previousTimeOnAllDen = context.get('previousTimeOnAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmcustomon = eventData.confirmcustomon;\nconst customtimeon = eventData.customtimeon;\n\n// Nếu confirmcustomon = 1 và customtimeon thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmcustomon === 1 && customtimeon !== previousTimeOnAllDen) {\n    if (intervalIdCustom) {\n        clearInterval(intervalIdCustom);\n        intervalIdCustom = null;\n        context.set('intervalIdCustom', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdCustom = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ customtimeon\n        if (currentHour === customtimeon && currentMinute === 0 && currentSecond === 0) {\n            // Tạo một đối tượng để lưu trữ trạng thái của tất cả các đèn\n            const payloadData = {};\n\n            // Kiểm tra trạng thái của từng đèn và thêm vào đối tượng payloadData\n            if (eventData.den1on === 1) payloadData.DEN_GAN_NHA_VE_SINH = 1;\n            if (eventData.den2on === 1) payloadData.DEN_XUONG_5 = 1;\n            if (eventData.den3on === 1) payloadData.DEN_XUONG_4 = 1;\n            if (eventData.den4on === 1) payloadData.DEN_KHU_VUC_BEP = 1;\n            if (eventData.den5on === 1) payloadData.DEN_XUONG_2 = 1;\n            if (eventData.den6on === 1) payloadData.DEN_XUONG_3 = 1;\n            if (eventData.den7on === 1) payloadData.LED_VANG = 1;\n            if (eventData.den8on === 1) payloadData.DEN_BANG = 1;\n\n            // Nếu có ít nhất một đèn được bật, gửi tin nhắn\n            if (Object.keys(payloadData).length > 0) {\n                const message = {\n                    topic: \"subtop\",\n                    payload: {\n                        data: payloadData\n                    }\n                };\n                node.send(message);\n            }\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdCustom', intervalIdCustom);\n    context.set('previousTimeOnAllDen', customtimeon);\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${customtimeon} mỗi ngày.`);\n}\n\n// Nếu confirmcustomon = 0 và có interval, dừng vòng lặp\nif (confirmcustomon === 0 && intervalIdCustom) {\n    clearInterval(intervalIdCustom);\n    context.set('intervalIdCustom', null);\n    context.set('previousTimeOnAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 2000,
+        "wires": [
+            [
+                "69b520c6523abb13"
+            ]
+        ]
+    },
+    {
+        "id": "69b520c6523abb13",
+        "type": "mqtt out",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "subtop",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "af96de71051eab08",
+        "x": 950,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "cb7cc5a2432ce817",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "AUTOONDEN",
+        "func": "let intervalIdOnDen = context.get('intervalIdOnDen') || null;\nlet previousTimeOnAllDen = context.get('previousTimeOnAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmONALLden = eventData.confirmONALLden;\nconst timeonall = eventData.timeonall;\n\n// Nếu confirmONALLden = 1 và timeonall thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmONALLden === 1 && timeonall !== previousTimeOnAllDen) {\n    if (intervalIdOnDen) {\n        clearInterval(intervalIdOnDen);\n        intervalIdOnDen = null;\n        context.set('intervalIdOnDen', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdOnDen = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ timeonall\n        if (currentHour === timeonall && currentMinute === 0 && currentSecond === 0) {\n            // Gửi các tin nhắn theo yêu cầu\n            node.send([\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_GAN_NHA_VE_SINH\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_5\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_4\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_KHU_VUC_BEP\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_2\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_3\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"LED_VANG\": 1 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_BANG\": 1 } } }\n            ]);\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdOnDen', intervalIdOnDen);\n    context.set('previousTimeOnAllDen', timeonall);\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${timeonall} mỗi ngày.`);\n}\n\n// Nếu confirmONALLden = 0 và có interval, dừng vòng lặp\nif (confirmONALLden === 0 && intervalIdOnDen) {\n    clearInterval(intervalIdOnDen);\n    context.set('intervalIdOnDen', null);\n    context.set('previousTimeOnAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f445e3735fc9dbb0",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "AUTOOFFDEN",
+        "func": "let intervalIdOffDen = context.get('intervalIdOffDen') || null;\nlet previousTimeOffAllDen = context.get('previousTimeOffAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmOFFALLden = eventData.confirmOFFALLden;\nconst timeoffall = eventData.timeoffall;\n\n// Nếu confirmOFFALLden = 1 và timeoffall thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmOFFALLden === 1 && timeoffall !== previousTimeOffAllDen) {\n    if (intervalIdOffDen) {\n        clearInterval(intervalIdOffDen);\n        intervalIdOffDen = null;\n        context.set('intervalIdOffDen', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdOffDen = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ timeoffall\n        if (currentHour === timeoffall && currentMinute === 0 && currentSecond === 0) {\n            // Gửi các tin nhắn với giá trị 0 cho tất cả các bulb\n            node.send([\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_GAN_NHA_VE_SINH\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_5\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_4\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_KHU_VUC_BEP\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_2\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_3\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"LED_VANG\": 0 } } },\n                { topic: \"subtop\", payload: { \"data\": { \"DEN_BANG\": 0 } } }\n            ]);\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdOffDen', intervalIdOffDen);\n    context.set('previousTimeOffAllDen', timeoffall);\n    node.warn(`Bắt đầu gửi tin nhắn tắt đèn vào giờ thứ ${timeoffall} mỗi ngày.`);\n}\n\n// Nếu confirmOFFALLden = 0 và có interval, dừng vòng lặp\nif (confirmOFFALLden === 0 && intervalIdOffDen) {\n    clearInterval(intervalIdOffDen);\n    context.set('intervalIdOffDen', null);\n    context.set('previousTimeOffAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn tắt đèn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50a5eafefe7fe182",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Customden",
+        "func": "let intervalIdCustom = context.get('intervalIdCustom') || null;\nlet previousTimeOnAllDen = context.get('previousTimeOnAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmcustomon = eventData.confirmcustomon;\nconst customtimeon = eventData.customtimeon;\n\n// Nếu confirmcustomon = 1 và customtimeon thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmcustomon === 1 && customtimeon !== previousTimeOnAllDen) {\n    if (intervalIdCustom) {\n        clearInterval(intervalIdCustom);\n        intervalIdCustom = null;\n        context.set('intervalIdCustom', null);\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdCustom = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ customtimeon\n        if (currentHour === customtimeon && currentMinute === 0 && currentSecond === 0) {\n            // Gửi các tin nhắn theo yêu cầu dựa trên trạng thái của các đèn\n            const messages = [];\n            if (eventData.den1on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_GAN_NHA_VE_SINH\": 1 } } });\n            if (eventData.den2on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_5\": 1 } } });\n            if (eventData.den3on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_4\": 1 } } });\n            if (eventData.den4on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_KHU_VUC_BEP\": 1 } } });\n            if (eventData.den5on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_2\": 1 } } });\n            if (eventData.den6on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_XUONG_3\": 1 } } });\n            if (eventData.den7on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"LED_VANG\": 1 } } });\n            if (eventData.den8on === 1) messages.push({ topic: \"subtop\", payload: { \"data\": { \"DEN_BANG\": 1 } } });\n\n            if (messages.length > 0) {\n                node.send(messages);\n            }\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdCustom', intervalIdCustom);\n    context.set('previousTimeOnAllDen', customtimeon);\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${customtimeon} mỗi ngày.`);\n}\n\n// Nếu confirmcustomon = 0 và có interval, dừng vòng lặp\nif (confirmcustomon === 0 && intervalIdCustom) {\n    clearInterval(intervalIdCustom);\n    context.set('intervalIdCustom', null);\n    context.set('previousTimeOnAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1e369dede401bc3",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "schedule_customoff_topic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 2100,
+        "wires": [
+            [
+                "a9bd915d9e4fb903"
+            ]
+        ]
+    },
+    {
+        "id": "a9bd915d9e4fb903",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "customoff",
+        "func": "let intervalIdCustomOff = context.get('intervalIdCustomOff') || null; // Đổi tên biến interval\nlet previousTimeOnAllDen = context.get('previousTimeOnAllDen') || null;\n\nconst eventData = msg.payload.data;\nconst confirmcustomoff = eventData.confirmcustomoff; // Sử dụng confirmcustomoff\nconst customtimeoff = eventData.customtimeoff; // Sử dụng customtimeoff\n\n// Nếu confirmcustomoff = 1 và customtimeoff thay đổi, hủy interval hiện tại và thiết lập lại\nif (confirmcustomoff === 1 && customtimeoff !== previousTimeOnAllDen) {\n    if (intervalIdCustomOff) {\n        clearInterval(intervalIdCustomOff);\n        intervalIdCustomOff = null;\n        context.set('intervalIdCustomOff', null); // Cập nhật tên biến trong context\n        node.warn(\"Cập nhật thời gian mới, hủy interval cũ.\");\n    }\n\n    // Thiết lập interval mới\n    intervalIdCustomOff = setInterval(() => {\n        // Lấy thời gian hiện tại theo múi giờ GMT+7\n        const now = new Date();\n        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000); // Chuyển sang UTC\n        const gmt7Time = new Date(utcTime + (7 * 3600 * 1000)); // Chuyển sang GMT+7\n\n        const currentHour = gmt7Time.getHours();\n        const currentMinute = gmt7Time.getMinutes();\n        const currentSecond = gmt7Time.getSeconds();\n\n        // Gửi tin nhắn đúng vào giờ customtimeoff\n        if (currentHour === customtimeoff && currentMinute === 0 && currentSecond === 0) {\n            // Tạo một đối tượng để lưu trữ trạng thái của tất cả các đèn\n            const payloadData = {};\n\n            // Kiểm tra trạng thái của từng đèn và thêm vào đối tượng payloadData\n            if (eventData.den1off === 0) payloadData.DEN_GAN_NHA_VE_SINH = 0;\n            if (eventData.den2off === 0) payloadData.DEN_XUONG_5 = 0;\n            if (eventData.den3off === 0) payloadData.DEN_XUONG_4 = 0;\n            if (eventData.den4off === 0) payloadData.DEN_KHU_VUC_BEP = 0;\n            if (eventData.den5off === 0) payloadData.DEN_XUONG_2 = 0;\n            if (eventData.den6off === 0) payloadData.DEN_XUONG_3 = 0;\n            if (eventData.den7off === 0) payloadData.LED_VANG = 0;\n            if (eventData.den8off === 0) payloadData.DEN_BANG = 0;\n\n            // Nếu có ít nhất một đèn được tắt (giá trị = 0), gửi tin nhắn\n            if (Object.keys(payloadData).length > 0) {\n                const message = {\n                    topic: \"subtop\",\n                    payload: {\n                        data: payloadData\n                    }\n                };\n                node.send(message);\n            }\n        }\n    }, 1000); // Kiểm tra mỗi giây\n\n    context.set('intervalIdCustomOff', intervalIdCustomOff); // Cập nhật tên biến trong context\n    context.set('previousTimeOnAllDen', customtimeoff);\n    node.warn(`Bắt đầu gửi tin nhắn vào giờ thứ ${customtimeoff} mỗi ngày.`);\n}\n\n// Nếu confirmcustomoff = 0 và có interval, dừng vòng lặp\nif (confirmcustomoff === 0 && intervalIdCustomOff) {\n    clearInterval(intervalIdCustomOff);\n    context.set('intervalIdCustomOff', null); // Cập nhật tên biến trong context\n    context.set('previousTimeOnAllDen', null);\n    node.warn(\"Dừng gửi tin nhắn.\");\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 2100,
+        "wires": [
+            [
+                "69b520c6523abb13"
+            ]
+        ]
+    },
+    {
+        "id": "b4f975edb347be69",
+        "type": "mqtt in",
+        "z": "f1d2d6fa4514915b",
+        "name": "",
+        "topic": "trangthaihethong",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "af96de71051eab08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 2320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0577efd524efd5f0",
+        "type": "inject",
+        "z": "f1d2d6fa4514915b",
+        "name": "Trigger Check",
+        "props": [],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 2400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ddca5e9a175513e",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "Check Status",
+        "func": "// Lưu thời gian nhận payload cuối cùng vào context\nif (msg.topic === 'trangthaihethong') {\n    context.set('last_received', Date.now());\n    return null;\n}\n\n// Kiểm tra xem có nhận được payload trong 30 giây qua không\nconst lastReceived = context.get('last_received') || 0;\nconst currentTime = Date.now();\nif (currentTime - lastReceived > 30000) {\n    // Nếu không nhận được payload trong 30 giây, chuyển tiếp msg để truy vấn database\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 2400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd0753179535eb65",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "truy van database",
+        "func": "// Thiết lập headers và URL để truy vấn danh sách admin\nmsg.headers = {\n     \"apikey\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa3loaWNmbmpscXBwd2R3Y2NtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3MDY0MDMsImV4cCI6MjA1MDI4MjQwM30.kxEQexK2XWWmScCTGA5CPb8Uybgkhd8aHaS-Vp1tVdY\"\n}\nmsg.url = \"https://vjkyhicfnjlqppwdwccm.supabase.co/rest/v1/ISSH?role=eq.admin\";\nmsg.method = \"GET\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0759ba4c096b0d3e",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "truy van database",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 930,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "663c753dbd5a242c",
+        "type": "function",
+        "z": "f1d2d6fa4514915b",
+        "name": "soan noi dung email va chuan bi api , key",
+        "func": "// Lấy chuỗi JSON từ kết quả truy vấn database\nconst adminsString = msg.payload;\n\n// Chuyển đổi chuỗi JSON thành đối tượng JavaScript\nlet admins;\ntry {\n    admins = JSON.parse(adminsString);\n} catch (error) {\n    node.error(\"Lỗi khi phân tích cú pháp JSON: \" + error.message);\n    return null;\n}\n\n// Kiểm tra xem admins có tồn tại và là một mảng không\nif (!admins || !Array.isArray(admins)) {\n    node.warn(\"Dữ liệu trả về không hợp lệ. Kết quả phải là một mảng.\");\n    return null;\n}\n\n// Kiểm tra xem mảng có rỗng không\nif (admins.length === 0) {\n    node.warn(\"Không tìm thấy admin nào trong database.\");\n    return null;\n}\n\n// Kiểm tra xem mỗi phần tử trong mảng có chứa trường 'email' không\nconst validAdmins = admins.filter(admin => admin.email && typeof admin.email === 'string');\n\nif (validAdmins.length === 0) {\n    node.warn(\"Không có email hợp lệ nào được tìm thấy.\");\n    return null;\n}\n\n// Soạn nội dung email\nconst emailContent = `Hệ thống đã mất kết nối. Vui lòng kiểm tra lại.`;\n\n// Chuẩn bị payload để gửi email\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Basic \" + Buffer.from(\"bd9e2b8dbc0afe38729dc3f241b0070c:95863c8bcd785a4e6f19b09e6c4d698b\").toString(\"base64\")\n};\nmsg.url = \"https://api.mailjet.com/v3.1/send\";\nmsg.method = \"POST\";\nmsg.payload = {\n    \"Messages\": [\n        {\n            \"From\": {\n                \"Email\": \"cloudscada.ISSH@gmail.com\",\n                \"Name\": \"CLOUD SCADA VBOX\"\n            },\n            \"To\": validAdmins.map(admin => ({\n                \"Email\": admin.email,\n                \"Name\": admin.username || \"Admin\" // Sử dụng tên mặc định nếu không có username\n            })),\n            \"Subject\": \"Hệ thống mất kết nối\",\n            \"TextPart\": emailContent\n        }\n    ]\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8e763b92fb365d7",
+        "type": "http request",
+        "z": "f1d2d6fa4514915b",
+        "name": "send email",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1530,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a5d322e9be0edfd",
+        "type": "ui_button",
+        "z": "af7cc9e22f0c9311",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cacc6a1ae1209942",
+        "type": "ui_numeric",
+        "z": "af7cc9e22f0c9311",
+        "name": "",
+        "label": "numeric",
+        "tooltip": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "device_input",
+        "type": "ui_text_input",
+        "z": "43d5a9565a238fac",
+        "name": "Nhập số đèn",
+        "label": "         Số đèn (1–70)",
+        "tooltip": "Nhập số đèn cần bật (1đèn/1giờ)",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "passthru": true,
+        "mode": "number",
+        "delay": 0,
+        "topic": "",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "save_device"
+            ]
+        ]
+    },
+    {
+        "id": "save_device",
+        "type": "change",
+        "z": "43d5a9565a238fac",
+        "name": "Lưu vào flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "device_num",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "x": 580,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "send_button",
+        "type": "ui_button",
+        "z": "43d5a9565a238fac",
+        "name": "Gửi MQTT",
+        "group": "dashboard_group",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "format_json"
+            ]
+        ]
+    },
+    {
+        "id": "format_json",
+        "type": "function",
+        "z": "43d5a9565a238fac",
+        "name": "Tạo JSON",
+        "func": "let device = flow.get(\"device_num\") || 1;\nlet hour = flow.get(\"hour_val\") || 1;\n\nmsg.payload = {\n    device: device,\n    Hour: hour\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "mqtt_set"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_set",
+        "type": "mqtt out",
+        "z": "43d5a9565a238fac",
+        "name": "Gửi topic 'set'",
+        "topic": "set",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ed96e13f2437c5eb",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    }
+]
