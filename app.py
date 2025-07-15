@@ -3,15 +3,25 @@ from streamlit.components.v1 import html
 import time
 from pyngrok import ngrok
 
-ngrok.set_auth_token("2zsz2SxGP86gxDTO8ZXeD49UFiE_3Qt4k3LttMs9HyRJENKcg")  # Replace with your token
-ngrok_tunnel = ngrok.connect(addr="1880", proto="http", bind_tls=True)
-public_url = ngrok_tunnel.public_url + "/ui"
-print(f"Streamlit app is running at: {public_url}")
+st.title("ĐỒ ÁN TỐT NGHIỆP")
+global public_url
+def run():
+    ngrok.set_auth_token("2zsz2SxGP86gxDTO8ZXeD49UFiE_3Qt4k3LttMs9HyRJENKcg")  # Replace with your token
+    ngrok_tunnel = ngrok.connect(addr="1880", proto="http", bind_tls=True)
+    public_url = ngrok_tunnel.public_url + "/ui"
+    st.write(f"Streamlit app is running at: {public_url}")
 
-iframe_code = f"""
-<iframe src="{public_url}" width="100%" height="1280px" style="border:none;"></iframe>
-"""
-html(iframe_code, height=600)
+    iframe_code = f"""
+    <iframe src="{public_url}" width="100%" height="1280px" style="border:none;"></iframe>
+    """
+    html(iframe_code, height=600)
+
+def stop(public_url):
+    ngrok.disconnect(public_url)
+    ngrok.kill()
+
+st.button("Chạy server", on_click=run, key="start")
+st.button("Dừng server", on_click=stop(public_url=""), key="stop")
 
 
 
