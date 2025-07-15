@@ -10,18 +10,19 @@ def run():
     ngrok_tunnel = ngrok.connect(addr="1880", proto="http", bind_tls=True)
     public_url = ngrok_tunnel.public_url + "/ui"
     st.write(f"Streamlit app is running at: {public_url}")
+    #time.sleep̣̣̣̣(5)
 
-    iframe_code = f"""
-    <iframe src="{public_url}" width="100%" height="1280px" style="border:none;"></iframe>
-    """
-    html(iframe_code, height=600)
+    #iframe_code = f"""
+    #<iframe src="{public_url}" width="100%" height="1280px" style="border:none;"></iframe>
+    #"""
+    #html(iframe_code, height=600)
 
 def stop(public_url):
     ngrok.disconnect(public_url)
     ngrok.kill()
 
 st.button("Chạy server", on_click=run, key="start")
-st.button("Dừng server", on_click=stop(public_url=""), key="stop")
+##st.button("Dừng server", on_click=stop(public_url=""), key="stop")
 
 
 
